@@ -3,16 +3,15 @@
   line-height: 108%;
   font-weight: 400;
   @include media-breakpoint-down(sm) {
-    font-size: rem-calc(28px);
+    font-size: rem-calc(30px);
     line-height: 114%;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.4px;
   }
 }
 
 @mixin h2 {
   font-size: rem-calc(28px);
   line-height: 107%;
-  margin-bottom: 24px;
   font-weight: 400;
   @include media-breakpoint-down(sm) {
     font-size: rem-calc(26px);
@@ -23,43 +22,38 @@
 @mixin h3 {
   font-size: rem-calc(24px);
   line-height: 108%;
-  margin-bottom: 24px;
   font-weight: 400;
   @include media-breakpoint-down(sm) {
     font-size: rem-calc(16px);
     line-height: 175%;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.02px;
   }
 }
 
 @mixin h4 {
   font-size: rem-calc(20px);
   line-height: 120%;
-  margin-bottom: 24px;
   font-weight: 400;
   @include media-breakpoint-down(sm) {
     font-size: rem-calc(18px);
     line-height: 122%;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.02px;
   }
 }
 
 @mixin h5 {
   font-size: rem-calc(18px);
   line-height: 156%;
-  margin-bottom: 24px;
   @include media-breakpoint-down(sm) {
-    margin-bottom: 16px;
-    font-size: rem-calc(13px);
+    font-size: rem-calc(14px);
     line-height: 123%;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.02px;
   }
 }
 
 @mixin h6 {
   font-size: rem-calc(16px);
   line-height: 150%;
-  margin-bottom: 24px;
   @include media-breakpoint-up(sm) {
     font-weight: 400;
   }
@@ -72,11 +66,10 @@
 @mixin h7 {
   font-size: rem-calc(13px);
   line-height: 140%;
-  margin-bottom: 16px;
   @include media-breakpoint-down(sm) {
     font-size: rem-calc(11px);
     line-height: 127%;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.02px;
   }
 }
 

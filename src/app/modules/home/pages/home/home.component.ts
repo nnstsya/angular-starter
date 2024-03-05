@@ -30,4 +30,8 @@ export class HomeComponent extends BasePageComponent {
     //   this.renderPageMeta()
     // })
   }
+
+  onScrollInto(selector: string): void {
+    document.querySelector(selector)?.scrollIntoView()
+  }
 }

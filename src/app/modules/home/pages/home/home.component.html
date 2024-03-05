@@ -1,6 +1,7 @@
 <app-header></app-header>
 <main>
-  <app-home-hero></app-home-hero>
+  <app-home-hero (scrollInto)="onScrollInto($event)"></app-home-hero>
   <app-home-projects></app-home-projects>
+  <app-home-broadcast id="home-broadcast-section"></app-home-broadcast>
 </main>
 <app-footer></app-footer>

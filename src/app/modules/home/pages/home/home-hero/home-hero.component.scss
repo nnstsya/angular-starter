@@ -1,4 +1,93 @@
-@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/bootstrap';
 @import 'src/assets/scss/theme-angular-starter1/bootstrap/variables';
 
+.hero-section {
+  align-items: center;
+  background-image: url("/assets/img/backgrounds/hero-bg.png");
+  background-size: cover;
+  display: flex;
+  gap: 45px;
+  justify-content: center;
+  flex-direction: column;
+  height: 850px;
+  width: 100%;
 
+  &-heading {
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 67px;
+    text-align: center;
+    width: 800px;
+    overflow-wrap: break-word;
+    margin-bottom: 0;
+  }
+
+  &-button {
+    border: 2px solid $black;
+    border-radius: 48px;
+    background-color: $black;
+    gap: 10px;
+    padding: 16px 34px;
+    height: 56px;
+    transition: 0.3s background-color ease;
+
+    @include media-breakpoint-up(tb) {
+      &:hover {
+        background-color: $gray-900;
+      }
+    }
+
+    &__text {
+      color: $white;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+    }
+
+    &__icon {
+      display: block;
+      width: 12px;
+      height: 16px;
+    }
+  }
+}
+
+@media(max-width: 800px) {
+  .hero-section-heading {
+    font-size: 34px;
+    width: 80vw;
+    line-height: 48px;
+    margin: 0;
+  }
+}
+
+@media(max-width: 425px) {
+  .hero-section {
+    height: 568px;
+    gap: 40px;
+    padding: 27px 15px 0;
+
+    &-heading {
+      font-size: 30px;
+      width: 288px;
+      line-height: 36px;
+    }
+
+    &-button {
+      padding-block: 12px;
+      width: 211px;
+      height: 48px;
+      margin-bottom: -2px;
+
+      &__text {
+        font-size: 13px;
+      }
+
+      &__icon {
+        width: 10px;
+        height: 13px;
+      }
+    }
+  }
+}
