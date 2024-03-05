@@ -1,0 +1,44 @@
+@import 'bootstrap/scss/mixins';
+@import 'src/assets/scss/theme-angular-starter1/bootstrap/variables';
+
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &-index {
+    border-radius: 30px;
+    background-color: #f4f4f4;
+    padding: 10px 23px;
+    width: fit-content;
+    font-size: 14px;
+  }
+
+  &-date {
+    font-size: 36px;
+    margin-bottom: 8px;
+    font-weight: 400;
+    line-height: 43px;
+
+    @include media-breakpoint-down(sm) {
+      font-size: 24px;
+      line-height: 29px;
+      margin-bottom: 0;
+    }
+  }
+
+  &-achievement {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include media-breakpoint-down(sm) {
+      gap: 15px;
+    }
+
+    &__text {
+      @include h5;
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,1 +1,7 @@
-<section>projects</section>
+<section class="projects-section d-flex justify-content-center align-items-center">
+  <div class="projects-section-projects">
+    <ng-container *ngFor="let project of projects">
+      <app-home-projects-project class="projects-section-projects-item" [project]="project"></app-home-projects-project>
+    </ng-container>
+  </div>
+</section>

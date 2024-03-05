@@ -1,0 +1,9 @@
+<div class="project">
+  <span class="project-index">{{ project.index | number : '2.0-0' }}</span>
+  <span class="project-date">{{ project.date }}</span>
+  <div class="project-achievement">
+    <ng-container *ngFor="let achievement of project.achievements">
+      <h5 class="project-achievement__text">{{ achievement }}</h5>
+    </ng-container>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<section class="broadcast-section">
+  <ng-template #broadcast>
+    <video class="broadcast-section__video" autoplay controls (ended)="toggleVideoIsPlaying()">
+      <source src="/assets/videos/broadcast.mp4" type="video/mp4" />
+    </video>
+  </ng-template>
+  <ng-container *ngIf="!videoIsPlaying; else broadcast">
+    <div class="broadcast-section__text">
+      <h1 class="broadcast-section__text-h1">Презентація наживо</h1>
+      <h3 class="broadcast-section__text-h3">11 березня, о 12:00</h3>
+    </div>
+    <button (click)="toggleVideoIsPlaying()">
+      <img class="broadcast-section-play__icon"
+           src="/assets/img/icons/play-icon.svg"
+           alt="Play"/>
+    </button>
+  </ng-container>
+</section>

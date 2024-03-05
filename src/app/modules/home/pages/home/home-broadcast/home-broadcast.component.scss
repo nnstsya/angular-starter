@@ -1,0 +1,68 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'src/assets/scss/theme-angular-starter1/bootstrap/variables';
+
+.broadcast-section {
+  background: url("/assets/img/backgrounds/broadcast-bg.png") no-repeat;
+  background-size: contain;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  position: relative;
+
+  &__video {
+    width: 100%;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    padding-left: 155px;
+    padding-top: 87px;
+    gap: 30px;
+    color: $white;
+    width: fit-content;
+
+    @include media-breakpoint-down(md) {
+      padding-left: 80px;
+      padding-top: 47px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding: 16px;
+      gap: 2px;
+    }
+
+    &-h1 {
+      @include h1;
+      @include media-breakpoint-down(md) {
+        font-size: 36px;
+      }
+      @include media-breakpoint-down(sm) {
+        font-size: 20px;
+        margin-bottom: 0;
+      }
+    }
+
+    &-h3 {
+      @include h3;
+      margin-bottom: 0;
+      @include media-breakpoint-down(md) {
+        font-size: 14px;
+      }
+      @include media-breakpoint-down(sm) {
+        font-size: 10px;
+      }
+    }
+  }
+
+  &-play__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include media-breakpoint-down(sm) {
+      width: 48px;
+      height: 50px;
+    }
+  }
+}
