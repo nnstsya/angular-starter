@@ -30,7 +30,7 @@
   &-achievement {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 27px;
 
     @include media-breakpoint-down(sm) {
       gap: 15px;

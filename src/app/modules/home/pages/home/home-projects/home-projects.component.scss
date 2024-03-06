@@ -6,9 +6,9 @@
   width: 100%;
 
   &-projects {
-    padding: 96px 100px 116px;
+    padding: 94px 100px 116px;
     display: grid;
-    grid-gap: 48px 32px;
+    grid-gap: 46px 32px;
     grid-template-columns: repeat(3, 352px);
 
     @include media-breakpoint-down(lg) {
