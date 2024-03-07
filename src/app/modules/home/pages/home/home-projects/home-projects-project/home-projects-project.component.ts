@@ -1,7 +1,6 @@
-// eslint-disable-next-line import/no-relative-parent-imports
-import { ProjectModel } from '../../../../interfaces/project.model'
-
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core'
+
+import { ProjectModel } from 'src/app/modules/home/models/project.model'
 
 @Component({
   selector: 'app-home-projects-project',
