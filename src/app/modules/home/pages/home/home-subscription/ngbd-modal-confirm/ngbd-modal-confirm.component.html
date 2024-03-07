@@ -1,0 +1,16 @@
+<div class="modal">
+  <div class="modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')"></button>
+        <h4 class="modal-header-title" id="modal-title">Дякуємо</h4>
+      </div>
+      <div class="modal__body">
+        <p>Ми відправили лист на вашу пошту. Будь ласка, підтвердіть підписку.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" ngbAutofocus class="btn modal-footer-button" (click)="modal.close('Ok click')">Ок</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,137 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap/scss/mixins';
+@import 'src/assets/scss/theme-angular-starter1/bootstrap/variables';
+
+.subscription-section {
+  height: fit-content;
+  width: 100%;
+  background-color: #ffcd4e;
+  padding: 114px 0 140px;
+  display: flex;
+  place-content: center;
+
+  &-wrapper {
+    display: grid;
+    grid-template-columns: 448px 352px;
+    grid-column-gap: 128px;
+    width: 928px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+
+    &-heading {
+      @include h1;
+      line-height: 67px;
+      letter-spacing: -1px;
+      margin-bottom: 0;
+    }
+
+    &-text {
+      @include h5;
+      margin-bottom: 0;
+      letter-spacing: -0.1px;
+    }
+  }
+
+  &__form  {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &-input {
+      background-color: transparent;
+      @include h5;
+      border: none;
+      border-bottom: 2px solid $black;
+      margin-bottom: 9px;
+      width: 294px;
+
+      &__error-messages {
+        color: red;
+      }
+    }
+
+    &-button {
+      padding: 20px 90px;
+      width: fit-content;
+      border-radius: 40px;
+      background-color: $black;
+      color: $white;
+      transition: 0.3s background-color ease;
+    }
+
+    &-consent {
+      @include h8;
+      line-height: 18px;
+
+      &-wrapper {
+        width: 258px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(tb) {
+  .subscription-section__form-button:hover {
+    background-color: $gray-900;
+  }
+}
+
+@include media-breakpoint-down(tb) {
+  .subscription-section {
+    place-content: center;
+    padding: 54px 158px 43px;
+    text-align: center;
+
+    &-wrapper {
+      display: grid;
+      grid-template-columns: 288px;
+      width: 288px;
+      grid-row-gap: 54px;
+    }
+
+    &__info {
+      gap: 25px;
+
+
+      &-heading {
+        font-size: 26px;
+      }
+
+      &-text {
+        line-height: 21px;
+      }
+    }
+
+    &__form {
+      gap: 14px;
+      align-items: center;
+
+      &-input {
+        font-size: 16px;
+        padding-bottom: 7px;
+        margin-bottom: 20px;
+      }
+
+      &-button {
+        padding: 15px 43px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .subscription-section {
+    place-content: start;
+    padding-inline: 16px;
+    text-align: start;
+
+    &__form {
+      align-items: start;
+    }
+  }
+}
