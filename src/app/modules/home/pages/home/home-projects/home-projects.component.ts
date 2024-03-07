@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core'
+import { Component } from '@angular/core'
 
 import { ProjectModel } from 'src/app/modules/home/models/project.model'
 

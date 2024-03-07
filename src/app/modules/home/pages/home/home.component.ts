@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, HostListener } from '@angular/core'
+import { Component, HostListener } from '@angular/core'
 import { Meta, Title } from '@angular/platform-browser'
 import { ActivatedRoute } from '@angular/router'
 
