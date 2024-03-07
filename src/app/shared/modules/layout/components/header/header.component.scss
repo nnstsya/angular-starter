@@ -24,7 +24,7 @@
     padding: 47px 4vw 0 4vw;
   }
 
-  &-logo {
+  &__logo {
     display: block;
     width: 190px;
     height: 43px;
@@ -32,7 +32,7 @@
     margin-top: -2px;
   }
 
-  &-button {
+  &__button {
     border: 2px solid black;
     border-radius: 48px;
     display: flex;
@@ -47,14 +47,14 @@
       }
     }
 
-    &__text {
+    &-text {
       font-weight: 400;
       font-size: 16px;
       line-height: 24px;
       letter-spacing: -0.2px;
     }
 
-    &__icon {
+    &-icon {
       display: block;
       width: 16px;
       height: 24px;
@@ -68,25 +68,25 @@
     display: flex;
     align-items: center;
 
-    &-logo {
+    &__logo {
       width: 108px;
       height: 26px;
       margin-top: 0;
       margin-left: 2px;
     }
 
-    &-button {
+    &__button {
       border: 1px solid black;
       border-radius: 27px;
       height: 32px;
       padding: 4px 24px;
 
-      &__text {
+      &-text {
         font-size: 13px;
         letter-spacing: 0;
       }
 
-      &__icon {
+      &-icon {
         width: 11px;
         height: 15px;
       }

@@ -1,0 +1,110 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap/scss/mixins';
+@import 'src/assets/scss/theme-angular-starter1/bootstrap/variables';
+
+.footer {
+  height: fit-content;
+  width: 100%;
+  background-color: $black;
+  padding: 50px 160px 37px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+
+    &-contacts {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      &-social-media {
+        display: flex;
+        gap: 12px;
+      }
+
+      &-resources {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+
+        &-resource {
+          color: $white;
+          margin-bottom: 8px;
+          font-size: 14px;
+          line-height: 21px;
+          font-weight: 400;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    @include h8;
+    color: $white;
+    opacity: 50%;
+    line-height: 18px;
+  }
+}
+
+@include media-breakpoint-up(tb) {
+  .footer__info-contacts {
+    &-resources-resource:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    &-social-media a:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+@include media-breakpoint-down(tb) {
+  .footer {
+    padding: 64px 100px 12px;
+    gap: 28px;
+
+    &__info {
+      flex-direction: column;
+      gap: 24px;
+
+      &-logo {
+        order: 2;
+      }
+
+      &-contacts {
+        gap: 44px;
+        align-self: end;
+
+        &-social-media {
+          display: flex;
+          gap: 14px;
+        }
+
+        &-resources-resource {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .footer {
+    padding-inline: 16px;
+
+    &__info-contacts {
+      align-self: start;
+
+      &-resources {
+        align-items: start;
+      }
+    }
+  }
+}

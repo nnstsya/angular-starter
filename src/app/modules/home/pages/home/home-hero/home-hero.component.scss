@@ -13,7 +13,7 @@
   height: 850px;
   width: 100%;
 
-  &-heading {
+  &__heading {
     font-weight: 400;
     font-size: 56px;
     line-height: 67px;
@@ -30,7 +30,7 @@
     }
   }
 
-  &-button {
+  &__button {
     border: 2px solid $black;
     border-radius: 48px;
     background-color: $black;
@@ -45,7 +45,7 @@
       }
     }
 
-    &__text {
+    &-text {
       color: $white;
       font-weight: 400;
       font-size: 16px;
@@ -53,7 +53,7 @@
       letter-spacing: -0.2px;
     }
 
-    &__icon {
+    &-icon {
       display: block;
       width: 12px;
       height: 16px;
@@ -67,23 +67,23 @@
     gap: 40px;
     padding: 27px 15px 0;
 
-    &-heading {
+    &__heading {
       font-size: 30px;
       width: 288px;
       line-height: 36px;
     }
 
-    &-button {
+    &__button {
       padding-block: 12px;
       width: 211px;
       height: 48px;
       margin-bottom: -2px;
 
-      &__text {
+      &-text {
         font-size: 13px;
       }
 
-      &__icon {
+      &-icon {
         width: 10px;
         height: 13px;
       }
