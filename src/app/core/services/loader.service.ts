@@ -28,7 +28,7 @@ export class LoaderService {
         this.hideTimeout = undefined
       }
 
-      this.renderer.setStyle(this.siteLoaderRef, 'display', 'block')
+      this.renderer.setStyle(this.siteLoaderRef?.nativeElement, 'display', 'flex')
       this.renderer.removeClass(this.bodyRef.nativeElement, 'loaded')
     }
   }

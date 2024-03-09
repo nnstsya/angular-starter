@@ -1,0 +1,91 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap/scss/mixins';
+@import 'src/assets/scss/theme-angular-starter1/bootstrap/variables';
+
+.subscription-section {
+  &__form  {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &-input {
+      background-color: transparent;
+      @include h5;
+      border: none;
+      border-bottom: 2px solid $black;
+      margin-bottom: 9px;
+      width: 294px;
+
+      &__error-messages {
+        color: red;
+      }
+    }
+
+    &-button {
+      padding: 20px 90px;
+      width: fit-content;
+      border-radius: 40px;
+      background-color: $black;
+      color: $white;
+      transition: 0.3s background-color ease;
+
+      &__disabled {
+        background-color: $gray-800;
+        cursor: default;
+      }
+    }
+
+    &-consent {
+      @include h8;
+      line-height: 18px;
+
+      &-wrapper {
+        width: 258px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(tb) {
+  .subscription-section__form-button:hover {
+    &:not(.subscription-section__form-button__disabled) {
+      background-color: $gray-900;
+    }
+  }
+}
+
+@include media-breakpoint-down(tb) {
+  .subscription-section {
+    place-content: center;
+    padding: 54px 158px 43px;
+    text-align: center;
+
+    &__form {
+      gap: 14px;
+      align-items: center;
+
+      &-input {
+        font-size: 16px;
+        padding-bottom: 7px;
+        margin-bottom: 20px;
+      }
+
+      &-button {
+        padding: 15px 43px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .subscription-section {
+    place-content: start;
+    padding-inline: 16px;
+    text-align: start;
+
+    &__form {
+      align-items: start;
+    }
+  }
+}

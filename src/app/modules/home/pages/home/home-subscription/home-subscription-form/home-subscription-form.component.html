@@ -1,0 +1,24 @@
+<div class="subscription-section__form">
+  <form [formGroup]="formGroup">
+    <input type="email" id="subscription" class="subscription-section__form-input" formControlName="email" placeholder="Ваш email" />
+    <div *ngIf="formGroup.dirty && formGroup.invalid" class="subscription-section__form-input__error-messages">
+      <ng-container [ngSwitch]="errorKeys">
+        <div *ngSwitchCase="'required'">Не ввели email</div>
+        <div *ngSwitchCase="'email'">Неправильний формат email</div>
+        <div *ngSwitchCase="'alreadyExist'">Така пошта вже зареєстрована</div>
+        <div *ngSwitchDefault>Невідома помилка, зверніться у тех. підтримку</div>
+      </ng-container>
+    </div>
+  </form>
+  <button
+    class="subscription-section__form-button"
+    [class.subscription-section__form-button__disabled]="formGroup.pending"
+    [disabled]="formGroup.pending"
+    (click)="submit()"
+  >
+    Підписатись
+  </button>
+  <div class="subscription-section__form-consent-wrapper">
+    <p class="subscription-section__form-consent">Даю згоду на обробку та використання персональних даних</p>
+  </div>
+</div>

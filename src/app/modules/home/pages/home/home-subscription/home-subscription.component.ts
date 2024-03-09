@@ -3,7 +3,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 import { NgbdModalConfirmComponent } from './ngbd-modal-confirm/ngbd-modal-confirm.component'
 
 import { Component } from '@angular/core'
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+
+import { LoaderService } from 'src/app/core/services/loader.service'
 
 @Component({
   selector: 'app-home-subscription',
@@ -11,29 +12,17 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./home-subscription.component.scss'],
 })
 export class HomeSubscriptionComponent {
-  form: FormGroup
-  submitted = false
-
-  constructor(private fb: FormBuilder, private modalService: NgbModal) {
-    this.form = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-    })
-  }
-
-  get email(): any {
-    return this.form.get('email')
-  }
+  constructor(private modalService: NgbModal, private loaderService: LoaderService) {}
 
   openModal(): void {
     this.modalService.open(NgbdModalConfirmComponent)
   }
 
-  onSubmit(): void {
-    this.submitted = true
-    if (this.form.invalid) {
-      return
-    } else {
-      this.openModal()
-    }
+  showLoader(): void {
+    this.loaderService.showSiteLoader()
+  }
+
+  hideLoader(): void {
+    this.loaderService.hideSiteLoader()
   }
 }

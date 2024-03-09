@@ -3,7 +3,7 @@ import { finalize } from 'rxjs/operators'
 
 import { HttpErrorResponse } from '@angular/common/http'
 import { Component, ElementRef, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core'
-import { FormBuilder, FormGroup } from '@angular/forms'
+import { FormBuilder, FormGroup, ValidationErrors } from '@angular/forms'
 
 import { environment } from 'src/environments/environment'
 
@@ -11,10 +11,10 @@ import { environment } from 'src/environments/environment'
   template: '',
 })
 export abstract class BaseFormComponent implements OnInit, OnDestroy {
-  @Output() submitted: EventEmitter<unknown> = new EventEmitter()
+  @Output() submitted: EventEmitter<void> = new EventEmitter()
   @Output() sent: EventEmitter<unknown> = new EventEmitter()
   @Output() sentSuccess: EventEmitter<unknown> = new EventEmitter()
-  @Output() sentFailed: EventEmitter<unknown> = new EventEmitter()
+  @Output() sentFailed: EventEmitter<ValidationErrors | null> = new EventEmitter()
 
   private subscriptionChanges?: Subscription
 
@@ -128,11 +128,11 @@ export abstract class BaseFormComponent implements OnInit, OnDestroy {
    * Describes how to find validation error keys in object returned by backend
    */
   // TODO: set errorResponse: string | string[], upd LoginPupilFormComponent
-  setFormErrors(errorResponse: HttpErrorResponse): void {
+  setFormErrors(errorResponse: HttpErrorResponse | string): void {
     const generalErrors: Record<string, boolean> = {}
 
     // Nest Errors Handler
-    if (errorResponse.error && errorResponse.error.message) {
+    if (typeof errorResponse === 'object' && errorResponse.error && errorResponse.error.message) {
       if (errorResponse.error.message.forEach) {
         errorResponse.error.message.forEach((message: { property?: string } | string) => {
           const property = (<{ property?: string }>message)?.property || <string>message
@@ -149,7 +149,7 @@ export abstract class BaseFormComponent implements OnInit, OnDestroy {
     }
 
     // Laravel Errors Handler
-    if (errorResponse.error?.errors) {
+    if (typeof errorResponse === 'object' && errorResponse.error?.errors) {
       for (const [property, value] of Object.entries(errorResponse.error.errors)) {
         if (this.formGroup.get(property.toString())) {
           ;(<string[]>value).forEach((rule) => {
@@ -161,10 +161,14 @@ export abstract class BaseFormComponent implements OnInit, OnDestroy {
       }
     }
 
-    if (errorResponse.status === 0 || errorResponse.status >= 400) {
+    if (typeof errorResponse === 'object' && (errorResponse.status === 0 || errorResponse.status >= 400)) {
       if (!Object.keys(generalErrors)) {
         generalErrors.server = true
       }
+    }
+
+    if (typeof errorResponse === 'string') {
+      generalErrors[errorResponse] = true
     }
 
     this.formGroup.setErrors(generalErrors)
