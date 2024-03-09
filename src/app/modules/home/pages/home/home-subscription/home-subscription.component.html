@@ -4,18 +4,6 @@
       <h1 class="subscription-section__info-heading">Щотижневі новини</h1>
       <h5 class="subscription-section__info-text">Підпишіться, щоб отримувати листи</h5>
     </div>
-    <div class="subscription-section__form">
-      <form [formGroup]="form">
-        <input id="subscription" class="subscription-section__form-input" formControlName="email" placeholder="Ваш email" />
-        <div *ngIf="submitted && email?.invalid" class="subscription-section__form-input__error-messages">
-          <div *ngIf="email.errors?.required">Не ввели email</div>
-          <div *ngIf="email.errors?.email">Неправильний формат email</div>
-        </div>
-      </form>
-      <button class="subscription-section__form-button" (click)="onSubmit()">Підписатись</button>
-      <div class="subscription-section__form-consent-wrapper">
-        <p class="subscription-section__form-consent">Даю згоду на обробку та використання персональних даних</p>
-      </div>
-    </div>
+    <app-home-subscription-form (submitted)="showLoader()" (sent)="hideLoader()" (sentSuccess)="openModal()"></app-home-subscription-form>
   </div>
 </section>
